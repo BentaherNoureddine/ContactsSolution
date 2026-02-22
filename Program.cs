@@ -1,6 +1,7 @@
 ﻿using ContactsSolution.Buisiness;
 using ContactsSolution.buisness;
 using System;
+using System.Data;
 
 
 namespace ContactsSolution
@@ -80,12 +81,45 @@ namespace ContactsSolution
                     Console.WriteLine("Failed to update contact.");
                 }
             }
+
         }
+
+
+        static void listContacts()
+        {
+            DataTable contactsTable = ContactInfo.GetAll();
+
+            if (contactsTable.Rows.Count > 0)
+            {
+                Console.WriteLine("All Contacts:");
+                foreach (DataRow row in contactsTable.Rows)
+                {
+
+                    Console.WriteLine($"ID: {row["ContactID"]}");
+                    Console.WriteLine($"First Name: {row["FirstName"]}");
+                    Console.WriteLine($"Last Name: {row["LastName"]}");
+                    Console.WriteLine($"Email: {row["Email"]}");
+                    Console.WriteLine($"Phone Number: {row["Phone"]}");
+                    Console.WriteLine($"Address: {row["Address"]}");
+                    Console.WriteLine($"Date of Birth: {row["DateOfBirth"]}");
+                    Console.WriteLine($"Country ID: {row["CountryId"]}");
+                    Console.WriteLine($"Image Path: {row["ImagePath"]}");
+                    Console.WriteLine(new string('-', 20));
+
+                }
+            }
+            Console.WriteLine("there is no contacts to display");
+        }
+
+
         static void Main(string[] args)
         {
-           //findContactByID(1);
-           //reateContact();
+            //findContactByID(1);
+            //reateContact();
             //updateContact(1);
+           
+            listContacts();
+            Console.ReadKey();
         }
     }
 }

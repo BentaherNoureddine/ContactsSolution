@@ -1,5 +1,6 @@
 ﻿using ContactsSolution.Data;
 using System;
+using System.Data;
 
 
 
@@ -114,7 +115,7 @@ namespace ContactsSolution.buisness
 
                 case enMode.Update:
                     return _update();
-  
+
 
                 default:
                     return false;
@@ -123,9 +124,10 @@ namespace ContactsSolution.buisness
             }
         }
 
-        public  bool Create()
+
+        public bool Create()
         {
-            this.id  = clsDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
+            this.id = clsDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
 
             if (this.id != -1)
             {
@@ -138,6 +140,10 @@ namespace ContactsSolution.buisness
         }
 
 
+        public static DataTable GetAll()
+        {
+            return clsDataAccess.GetAllContacts();
 
+        }
     }
 }

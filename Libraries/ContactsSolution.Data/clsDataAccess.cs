@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace ContactsSolution.Data
@@ -136,5 +137,47 @@ namespace ContactsSolution.Data
 
             return isUpdated;
         }
+
+
+        public static DataTable GetAllContacts()
+        {
+
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+            string queryText = "SELECT * FROM Contacts";
+            SqlCommand command = new SqlCommand(queryText, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                    reader.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
+
+
     }
+
+
+
 }
