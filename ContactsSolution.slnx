@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ContactsSolution.csproj" Id="33f8a00f-dc03-47e6-bb14-dfdd9c4ba3c6" />
+  <Project Path="Libraries/ContactsSolution.buisness/ContactsSolution.Buisiness.csproj" Id="20ddfabd-3ab4-4bf9-bbc2-982c238788f1" />
+  <Project Path="Libraries/ContactsSolution.Data/ContactsSolution.Data.csproj" Id="457952e7-583c-4c98-82e0-060185cef4d7" />
+</Solution>

@@ -1,0 +1,6 @@
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\bin\Debug\ContactsSolution.Data.dll
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\bin\Debug\ContactsSolution.Data.pdb
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.csproj.AssemblyReference.cache
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.csproj.CoreCompileInputs.cache
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.dll
+G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.pdb

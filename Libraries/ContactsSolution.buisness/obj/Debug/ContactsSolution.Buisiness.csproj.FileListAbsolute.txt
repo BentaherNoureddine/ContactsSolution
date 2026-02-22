@@ -1,0 +1,9 @@
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\bin\Debug\ContactsSolution.buisness.dll
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\bin\Debug\ContactsSolution.buisness.pdb
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\bin\Debug\ContactsSolution.Data.dll
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\bin\Debug\ContactsSolution.Data.pdb
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\obj\Debug\ContactsSolution.Buisiness.csproj.AssemblyReference.cache
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\obj\Debug\ContactsSolution.Buisiness.csproj.CoreCompileInputs.cache
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\obj\Debug\Contacts.8B023816.Up2Date
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\obj\Debug\ContactsSolution.buisness.dll
+G:\projects\ContactsSolution\Libraries\ContactsSolution.buisness\obj\Debug\ContactsSolution.buisness.pdb
