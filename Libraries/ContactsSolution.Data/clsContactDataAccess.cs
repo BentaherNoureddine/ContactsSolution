@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace ContactsSolution.Data
 {
-    public static class clsDataAccess
+    public static class clsContactDataAccess
     {
         public static bool GetContactInfoByID(int contactId, ref string firstName, ref string lastName, ref string email, ref string phoneNumber, ref string address, ref DateTime dateOfBirth, ref int countryId, ref string imagePath)
         {
@@ -174,9 +174,49 @@ namespace ContactsSolution.Data
 
         }
 
+    
+        
+        public static bool isContactExists(int contactID)
+        {
+            Int32 count=0 ;
 
+            string querytext = "SELECT COUNT(*) FROM Contacts WHERE ContactID = @ContactID ";
 
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+            SqlCommand command = new SqlCommand(querytext, connection);
+
+            command.Parameters.AddWithValue("@ContactID", contactID);
+
+            try
+            {
+                connection.Open();
+                count = Convert.ToInt32(command.ExecuteScalar());
+                command.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return count > 0;
+        }
+   
+        
     }
+
+
+
+
+
+
+
+
 
 
 

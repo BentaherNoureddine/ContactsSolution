@@ -67,7 +67,7 @@ namespace ContactsSolution.buisness
 
         private bool _create()
         {
-            this.id = clsDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
+            this.id = clsContactDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
 
             return this.id != -1;
         }
@@ -87,7 +87,7 @@ namespace ContactsSolution.buisness
 
 
 
-            if (clsDataAccess.GetContactInfoByID(contactId, ref firstName, ref lastName, ref email, ref phoneNumber, ref address, ref dateOfBirth, ref countryId, ref imagePath))
+            if (clsContactDataAccess.GetContactInfoByID(contactId, ref firstName, ref lastName, ref email, ref phoneNumber, ref address, ref dateOfBirth, ref countryId, ref imagePath))
             {
                 return new ContactInfo(contactId, firstName, lastName, email, phoneNumber, address, dateOfBirth, countryId, imagePath);
             }
@@ -100,7 +100,7 @@ namespace ContactsSolution.buisness
 
         private bool _update()
         {
-            return clsDataAccess.Update(this.id, this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
+            return clsContactDataAccess.Update(this.id, this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
         }
 
 
@@ -127,7 +127,7 @@ namespace ContactsSolution.buisness
 
         public bool Create()
         {
-            this.id = clsDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
+            this.id = clsContactDataAccess.Create(this.firstName, this.lastName, this.email, this.phoneNumber, this.address, this.dateOfBirth, this.countryId, this.imagePath);
 
             if (this.id != -1)
             {
@@ -142,8 +142,13 @@ namespace ContactsSolution.buisness
 
         public static DataTable GetAll()
         {
-            return clsDataAccess.GetAllContacts();
+            return clsContactDataAccess.GetAllContacts();
 
+        }
+
+        public static bool isContactExists(int contactID)
+        {
+            return clsContactDataAccess.isContactExists(contactID);
         }
     }
 }

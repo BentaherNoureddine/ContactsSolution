@@ -41,14 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCountryInfo.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="ContactsInfoBuisiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContactsSolution.Data\ContactsSolution.Data.csproj">
+    <ProjectReference Include="..\ContactsSolution.Data\ContactsSolution.DataAccess.csproj">
       <Project>{457952e7-583c-4c98-82e0-060185cef4d7}</Project>
-      <Name>ContactsSolution.Data</Name>
+      <Name>ContactsSolution.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
