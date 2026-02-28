@@ -112,13 +112,25 @@ namespace ContactsSolution
         }
 
 
+    
+
+
         static void Main(string[] args)
         {
             //findContactByID(1);
             //reateContact();
             //updateContact(1);
-           
-            listContacts();
+            //listContacts();
+
+            if(ContactInfo.isContactExists(1))
+            {
+                Console.WriteLine("Contact with ID 1 exists.");
+            }
+            else
+            {
+                Console.WriteLine("Contact with ID 1 does not exist.");
+            }
+
             Console.ReadKey();
         }
     }
