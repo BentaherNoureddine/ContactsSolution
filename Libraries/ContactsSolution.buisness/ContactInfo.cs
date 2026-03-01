@@ -150,5 +150,12 @@ namespace ContactsSolution.buisness
         {
             return clsContactDataAccess.isContactExists(contactID);
         }
+
+        public static bool Delete(int contactID)
+        {
+            return clsContactDataAccess.Delete(contactID);
+        }
+
+
     }
 }

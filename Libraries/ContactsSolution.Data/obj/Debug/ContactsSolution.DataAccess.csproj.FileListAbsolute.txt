@@ -4,3 +4,9 @@ G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsS
 G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.DataAccess.csproj.CoreCompileInputs.cache
 G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.dll
 G:\projects\ContactsSolution\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.pdb
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\bin\Debug\ContactsSolution.Data.dll
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\bin\Debug\ContactsSolution.Data.pdb
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.DataAccess.csproj.AssemblyReference.cache
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.DataAccess.csproj.CoreCompileInputs.cache
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.dll
+G:\projects\ContactsSolutionConsoleApp\Libraries\ContactsSolution.Data\obj\Debug\ContactsSolution.Data.pdb

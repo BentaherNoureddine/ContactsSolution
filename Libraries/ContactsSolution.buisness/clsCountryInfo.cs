@@ -125,7 +125,7 @@ namespace ContactsSolution.buisness
 
 
 
-        public static List<clsCountryInfo> getAllCountries()
+        public static DataTable getAllCountries()
         {
          
             DataTable countriesDataTable = clsCountryDataAcess.getAllCountries();
@@ -137,13 +137,7 @@ namespace ContactsSolution.buisness
                 return null;
             }
 
-            List<clsCountryInfo> countriesList = new List<clsCountryInfo>();
-            foreach (DataRow row in countriesDataTable.Rows)
-            {
-                countriesList.Add(new clsCountryInfo(int.Parse(row["CountryID"].ToString()), row["CountryName"].ToString(), row["Code"].ToString(), row["PoneCode"].ToString()));
-            }
-
-            return countriesList;
+            return countriesDataTable;
 
 
 

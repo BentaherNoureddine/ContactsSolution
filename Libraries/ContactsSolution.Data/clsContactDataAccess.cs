@@ -3,6 +3,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace ContactsSolution.Data
 {
@@ -76,7 +77,12 @@ namespace ContactsSolution.Data
             command.Parameters.AddWithValue("@Address", address);
             command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
             command.Parameters.AddWithValue("@CountryID", countryId);
+
+            if(imagePath != null) {
             command.Parameters.AddWithValue("@ImagePath", imagePath);
+                } else {
+                command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
+            }
             try
             {
                 connection.Open();
@@ -206,8 +212,46 @@ namespace ContactsSolution.Data
 
             return count > 0;
         }
-   
-        
+
+        public static bool Delete(int contactID)
+        {
+
+
+            bool isDeleted = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+
+
+            string queryText = "DELETE FROM Contacts WHERE ContactID = @ContactID";
+            SqlCommand command = new SqlCommand(queryText, connection);
+            command.Parameters.AddWithValue("@ContactID", contactID);
+           
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    isDeleted = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isDeleted;
+
+        }
     }
 
 

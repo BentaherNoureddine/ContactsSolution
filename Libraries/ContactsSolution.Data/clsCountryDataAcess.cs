@@ -19,7 +19,7 @@ namespace ContactsSolution.Data
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
-            string query = "SELECT found=1 FROM Country WHERE CountyID = @CountyID";
+            string query = "SELECT found=1 FROM Countries WHERE CountyID = @CountyID";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
@@ -47,6 +47,7 @@ namespace ContactsSolution.Data
         }
 
 
+    
 
 
         public static int create(string CountryName,string Code,string PhoneCode)
@@ -55,7 +56,7 @@ namespace ContactsSolution.Data
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
-            string query = "INSERT INTO Country (CountryName,Code,PhoneCode) VALUES (@CountyName,@Code,PhoneCode); SELECT SCOPE_IDENTITY();";
+            string query = "INSERT INTO Countries (CountryName,Code,PhoneCode) VALUES (@CountyName,@Code,PhoneCode); SELECT SCOPE_IDENTITY();";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
@@ -94,7 +95,7 @@ namespace ContactsSolution.Data
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
-            string query = "UPDATE Country SET CountryName = @CountryName, Code=@COde, PhoneCode=@PhoneCode WHERE CountyID = @CountryID";
+            string query = "UPDATE Countries SET CountryName = @CountryName, Code=@COde, PhoneCode=@PhoneCode WHERE CountyID = @CountryID";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
@@ -128,13 +129,13 @@ namespace ContactsSolution.Data
         public static bool findCountryByName(string CountryName, ref int CountryID,ref string Code, ref string PhoneCode )
         {
 
-            string sqlQuery = "SELECT CountryID, Code, PhoneCode  FROM Country WHERE CountyName = @CountryName";
+            string sqlQuery = "SELECT CountryID, Code, PhoneCode  FROM Countries WHERE CountryName = @CountryName";
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("@Name", CountryName);
+            sqlCommand.Parameters.AddWithValue("@CountryName", CountryName);
 
             try
             {
@@ -168,13 +169,13 @@ namespace ContactsSolution.Data
         public static bool findCountryById(int CountyID, ref string CountryName,ref string Code, ref string PhoneCode)
         {
 
-            string sqlQuery = "SELECT CountryName, Code, PhoneCode  FROM Country WHERE CountyID = @CountryID";
+            string sqlQuery = "SELECT CountryName, Code, PhoneCode  FROM Countries WHERE CountryID = @CountryID";
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("@CountyID", CountyID);
+            sqlCommand.Parameters.AddWithValue("@CountryID", CountyID);
 
             try
             {
@@ -211,7 +212,7 @@ namespace ContactsSolution.Data
         {
             bool isFound = false;
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
-            string query = "SELECT found=1 FROM Country WHERE CountyName = @CountyName";
+            string query = "SELECT found=1 FROM Countries WHERE CountyName = @CountyName";
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.AddWithValue("@CountyName", CountyName);
 
@@ -238,7 +239,7 @@ namespace ContactsSolution.Data
 
         public static DataTable getAllCountries()
         {
-            string sqlQuery = "SELECT CountryID, CountryName, Code, PhoneCode FROM Country";
+            string sqlQuery = "SELECT * FROM Countries";
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
@@ -282,7 +283,7 @@ namespace ContactsSolution.Data
         {
             bool isDeleted = false;
 
-            string sqlQuery = "DELETE FROM Country WHERE CountryID = @CountryID";
+            string sqlQuery = "DELETE FROM Countries WHERE CountryID = @CountryID";
 
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.connectionString);
 
